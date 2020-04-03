@@ -5,7 +5,7 @@ const massive = require('massive');
 
 app.use(express.json());
 
-const controller = require('./controller');
+const { getInventory, createProduct } = require('./controller');
 
 const { CONNECTION_STRING } = process.env;
 
@@ -18,5 +18,8 @@ massive({
 });
 
 const port = 3001;
+
+app.get('/api/inventory', getInventory);
+app.post('/api/product', createProduct);
 
 app.listen(port, () => console.log(`The server is listening on port: ${port}`));

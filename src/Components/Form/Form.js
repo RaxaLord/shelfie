@@ -39,6 +39,7 @@ export default class Form extends Component {
     return (
       <div>
         <h1>Form Component</h1>
+        <img src={this.state.imgurl} alt='' />
         <form>
           <label for='imgurl'>Image Url:</label>
           <input
